@@ -4,25 +4,36 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
+    "build": "npm run build:tailwind && sapper build",
+    "export": "npm run build:tailwind && sapper export",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run"
+    "test": "run-p --race dev cy:run",
+    "tailwind": "postcss static/tailwind.css -o static/main.css -w",
+    "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/main.css"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "compression": "^1.7.1",
+    "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "pexels-api-wrapper": "^1.1.2",
     "pixabay-api": "^1.0.4",
     "polka": "next",
-    "sirv": "^0.4.0"
+    "sirv": "^0.4.0",
+    "unsplash-api": "^1.2.0",
+    "unsplash-js": "^6.0.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
     "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.1",
     "sapper": "^0.27.0",
     "svelte": "^3.0.0",
     "svelte-loader": "^2.9.0",
+    "tailwindcss": "^1.5.1",
     "webpack": "^4.7.0"
   }
 }
