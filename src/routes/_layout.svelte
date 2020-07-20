@@ -1,23 +1,28 @@
 <script>
   import { setContext } from "svelte";
   import { writable } from "svelte/store";
+  import { query, results } from "@/stores";
+  import axios from "axios";
 
   import Nav from "../components/Nav.svelte";
 
-  export let results;
+  query.subscribe(value => {
+    console.log({ indexQuery: value });
+    handleSearch(value);
+  });
 
-  const results$ = writable(results);
-  $: $results$ = results;
-
-  setContext("results", results$);
-
-  function handleSearch(event) {
-    console.log(encodeURI(event.detail.query));
-    results = event.detail.query;
+  async function handleSearch(query) {
+    if (query) {
+      const pexels = await axios
+        .get(`/pexels.json?query=${encodeURI(query)}`)
+        .then(res => {
+          results.set(res.data.photos);
+        });
+    }
   }
 </script>
 
-<Nav on:search={handleSearch} />
+<Nav />
 
 <main>
   <slot />

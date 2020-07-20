@@ -1,14 +1,14 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { query } from "@/stores";
+  let queryL = "fish";
 
-  const dispatch = createEventDispatcher();
-
-  let query = "fish";
+  query.subscribe(value => {
+    queryL = value;
+  });
 
   function handleSearch() {
-    dispatch("search", {
-      query
-    });
+    query.set(queryL);
   }
 
   function handleKeypress(e) {
@@ -17,8 +17,8 @@
 </script>
 
 <div
-  class="md:flex md:items-center md:justify-between py-3 px-4
-  bg-gradient-purple-pink shadow-xl">
+  class="px-4 py-3 shadow-xl md:flex md:items-center md:justify-between
+  bg-gradient-purple-pink">
   <div class="w-2/3 min-w-0">
     <div
       class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9
@@ -67,8 +67,8 @@
       </svg>
     </div>
   </div>
-  <div class="mt-4 flex md:mt-0 md:ml-4 w-1/3 justify-end">
-    <div class="flex items-center border-b border-b-2 border-white py-1">
+  <div class="flex justify-end w-1/3 mt-4 md:mt-0 md:ml-4">
+    <div class="flex items-center py-1 border-b border-b-2 border-white">
       <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8 text-white">
         <path
           fill-rule="evenodd"
@@ -77,17 +77,17 @@
           clip-rule="evenodd" />
       </svg>
       <input
-        class="appearance-none bg-transparent border-none w-full text-gray-100
-        mr-3 py-1 px-3 leading-tight focus:outline-none"
+        class="w-full px-3 py-1 mr-3 leading-tight text-gray-100 bg-transparent
+        border-none appearance-none focus:outline-none"
         type="text"
         aria-label="search"
-        bind:value={query}
+        bind:value={queryL}
         on:keypress={handleKeypress} />
       <button
-        class="flex-shrink-0 bg-purple-800 hover:bg-purple-900 border-purple-800
-        hover:border-purple-900 text-sm border-2 text-white py-1 px-4 rounded
-        font-light tracking-wide transition-all duration-300 transform
-        translate-y-0 hover:-translate-y-1"
+        class="flex-shrink-0 px-4 py-1 text-sm font-light tracking-wide
+        text-white transition-all duration-300 transform translate-y-0
+        bg-transparent border-2 border-transparent rounded hover:bg-purple-900
+        hover:border-purple-900 hover:-translate-y-1"
         type="button"
         on:click={handleSearch}>
         search

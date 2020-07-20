@@ -1,12 +1,17 @@
 @tailwind base;
 
 .bg-gradient-purple-pink {
-  background: rgb(60, 55, 148);
-  background: linear-gradient(
-    90deg,
-    rgba(60, 55, 148, 1) 0%,
-    rgba(164, 53, 147, 1) 100%
-  );
+  background: #44337a;
+  background: linear-gradient(90deg, #44337a 0%, #b83280 100%);
+}
+
+.bg-gradient-pink-purple {
+  background: #44337a;
+  background: linear-gradient(90deg, #b83280 0%, #44337a 100%);
+}
+
+.fullscreen-search-card {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 @tailwind components;
