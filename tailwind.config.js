@@ -1,8 +1,16 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    linearGradientColors: (theme) => theme("colors"),
+    radialGradientColors: (theme) => theme("colors"),
+    conicGradientColors: (theme) => theme("colors"),
+    extend: {
+      colors: {
+        cyan: "#9cdbff",
+        magenta: "#ea148c",
+      },
+    },
   },
   variants: {},
-  plugins: [],
-}
+  plugins: [require("tailwindcss-gradients")],
+};

@@ -1,5 +1,9 @@
 <script>
   let query = "";
+  import { getContext } from "svelte";
+  const results$ = getContext("results");
+  $: results = $results$;
+  $: console.log(results);
 </script>
 
 <style>
@@ -10,14 +14,8 @@
   <title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<h1 class="text-2xl font-light m-2">Home</h1>
 
-<figure>
-  <img alt="Success Kid" src="successkid.jpg" />
-  <figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p>
-  <strong>{query}</strong>
-</p>
-<input type="text" class="w-full p-3 border rounded" bind:value={query} />
+{#if results}
+  <pre>{JSON.stringify(results)}</pre>
+{/if}

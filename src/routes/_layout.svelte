@@ -1,22 +1,24 @@
 <script>
-	import Nav from '../components/Nav.svelte';
+  import { setContext } from "svelte";
+  import { writable } from "svelte/store";
 
-	export let segment;
+  import Nav from "../components/Nav.svelte";
+
+  export let results;
+
+  const results$ = writable(results);
+  $: $results$ = results;
+
+  setContext("results", results$);
+
+  function handleSearch(event) {
+    console.log(encodeURI(event.detail.query));
+    results = event.detail.query;
+  }
 </script>
 
-<style>
-	main {
-		position: relative;
-		max-width: 56em;
-		background-color: white;
-		padding: 2em;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-</style>
-
-<Nav {segment}/>
+<Nav on:search={handleSearch} />
 
 <main>
-	<slot></slot>
+  <slot />
 </main>
