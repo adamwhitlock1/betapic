@@ -18,6 +18,8 @@
     "compression": "^1.7.1",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
+    "imagesloaded": "^4.1.4",
+    "masonry-layout": "^4.2.2",
     "node-fetch": "^2.6.0",
     "pexels-api-wrapper": "^1.1.2",
     "pixabay-api": "^1.0.4",
