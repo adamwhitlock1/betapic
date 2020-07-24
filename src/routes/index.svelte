@@ -4,6 +4,8 @@
   import FullscreenSearch from "@/components/FullscreenSearch.svelte";
   import LoadingSkeleton from "@/components/LoadingSkeleton.svelte";
   import PexelsColumn from "@/components/PexelsColumn.svelte";
+  import PixabayColumn from "@/components/PixabayColumn.svelte";
+  import UnsplashColumn from "@/components/UnsplashColumn.svelte";
   import Tabs from "@/components/Tabs.svelte";
   import { results, loadingStatus } from "@/stores";
   const imagesloaded = require("imagesloaded");
@@ -18,7 +20,6 @@
 
   let resultsL = null;
   results.subscribe(value => {
-    console.log({ results: value });
     resultsL = value;
     if (resultsL.pexels) {
       setTimeout(() => {
@@ -29,7 +30,6 @@
 
   let loadingStatusL = false;
   loadingStatus.subscribe(value => {
-    console.log({ loadingStatus: value });
     loadingStatusL = value;
   });
 </script>
@@ -42,6 +42,8 @@
   <div class="container mx-auto">
     <div class="flex mt-4">
       <PexelsColumn results={resultsL.pexels} />
+      <PixabayColumn results={resultsL.pixabay} />
+      <UnsplashColumn results={resultsL.unsplash} />
     </div>
   </div>
 {:else if loadingStatusL}

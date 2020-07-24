@@ -7,7 +7,6 @@
   import Nav from "../components/Nav.svelte";
 
   query.subscribe(value => {
-    console.log({ indexQuery: value });
     handleSearch(value);
   });
 
@@ -22,9 +21,14 @@
         .get(`/pixabay.json?query=${encodeURI(query)}`)
         .then(res => res.data.hits);
 
+      const unsplash = await axios
+        .get(`/unsplash.json?query=${encodeURI(query)}`)
+        .then(res => res.data.results);
+
       results.set({
         pexels,
-        pixabay
+        pixabay,
+        unsplash
       });
 
       setTimeout(() => {

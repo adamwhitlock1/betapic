@@ -3,8 +3,9 @@
 </script>
 
 {#if results}
-  <div class="w-1/3 my-3">
-    <h3 class="text-2xl font-light text-center text-gray-700 uppercase">
+  <div class="w-1/3 px-3 my-3">
+    <h3
+      class="text-3xl font-thin tracking-wide text-center text-gray-700 uppercase">
       pexels:
     </h3>
     {#each results as image, i}

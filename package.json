@@ -21,6 +21,7 @@
     "imagesloaded": "^4.1.4",
     "masonry-layout": "^4.2.2",
     "node-fetch": "^2.6.0",
+    "pexels": "^1.0.1",
     "pexels-api-wrapper": "^1.1.2",
     "pixabay-api": "^1.0.4",
     "polka": "next",
