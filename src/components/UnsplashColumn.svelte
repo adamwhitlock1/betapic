@@ -5,8 +5,8 @@
 {#if results}
   <div class="w-1/3 px-3 my-3">
     <h3
-      class="text-3xl font-thin tracking-wide text-center text-gray-700 uppercase">
-      pexels:
+      class="text-3xl font-thin tracking-wider text-center text-gray-700 uppercase">
+      unsplash:
     </h3>
     {#each results as image, i}
       <!-- Article -->
@@ -15,14 +15,16 @@
         <img
           class="block w-full h-auto placeholder-item lazy"
           src={image.urls.small}
-          alt={`Pexels-result-${i}`} />
+          alt={`Unsplash-result-${i}`} />
 
         <div class="flex items-center justify-between px-3 my-3">
           <a
-            class="px-2 text-xs font-bold text-center text-blue-400"
+            class="h-16 px-2 mt-1 text-xs font-bold text-center text-blue-400"
             href={`${image.links.html}?utm_source=your_app_name&utm_medium=referral`}
             target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-8 mb-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-16 h-8 mx-auto my-1 mr-2">
               <path
                 d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"
                 fill="#000000"
@@ -36,7 +38,7 @@
             class="px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 text-purple-500"
+              class="w-6 h-6 text-blue-500"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
@@ -58,11 +60,12 @@
           <p class="pl-1 text-xs text-gray-600">
             {image.width}w x {image.height}h
           </p>
-          <p class="mr-2 text-xs text-right">
+          <p class="mr-2 text-xs text-right text-gray-600">
             <a
               href={`${image.user.links.html}?utm_source=your_app_name&utm_medium=referral`}
               target="_blank"
-              class="pr-4">
+              class="flex items-center">
+              <span class="pr-1">by:</span>
               <img
                 src={image.user.profile_image.small}
                 alt={image.user.name}

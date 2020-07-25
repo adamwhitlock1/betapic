@@ -5,7 +5,7 @@
 {#if results}
   <div class="w-1/3 px-3 my-3">
     <h3
-      class="text-3xl font-thin tracking-wide text-center text-gray-700 uppercase">
+      class="text-3xl font-thin tracking-wider text-center text-gray-700 uppercase">
       pexels:
     </h3>
     {#each results as image, i}
@@ -65,7 +65,7 @@
           <a href={image.src.original} target="_blank" class="px-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="w-6 h-6 text-purple-500"
+              class="w-6 h-6 text-blue-500"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
@@ -87,9 +87,9 @@
           <p class="pl-1 text-xs text-gray-600">
             {image.width}w x {image.height}h
           </p>
-          <p class="ml-2 text-xs text-right">
+          <p class="ml-2 text-xs text-right text-gray-600">
             <a href={image.photographer_url} target="_blank">
-              {image.photographer}
+              by: {image.photographer}
             </a>
           </p>
         </footer>
