@@ -17,18 +17,16 @@
 </script>
 
 <div
-  class="px-4 py-3 shadow-xl md:flex md:items-center md:justify-between
-  bg-gradient-purple-pink">
-  <div class="w-2/3 min-w-0">
+  class="justify-center block px-4 py-3 shadow-xl md:flex md:items-center md:justify-between bg-gradient-purple-pink">
+  <div class="w-full md:w-3/4">
     <div
-      class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9
-      sm:truncate">
+      class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate">
       <svg
         id="Layer_1"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 570.17 117.48"
-        class="w-40">
+        class="w-40 mx-auto md:mx-1">
 
         <defs>
           <style>
@@ -67,9 +65,12 @@
       </svg>
     </div>
   </div>
-  <div class="flex justify-end w-1/3 mt-4 md:mt-0 md:ml-4">
-    <div class="flex items-center py-1 border-b border-b-2 border-white">
-      <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8 text-white">
+  <div class="flex justify-end w-full md:w-1/4 md:mt-0 md:ml-4">
+    <div class="flex items-center w-full py-1 border-b-2 border-white">
+      <svg
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        class="w-10 h-10 text-white md:w-6 md:h-6">
         <path
           fill-rule="evenodd"
           d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1
@@ -77,17 +78,13 @@
           clip-rule="evenodd" />
       </svg>
       <input
-        class="w-full px-3 py-1 mr-3 leading-tight text-gray-100 bg-transparent
-        border-none appearance-none focus:outline-none"
+        class="w-full px-3 py-1 mr-3 leading-tight text-gray-100 bg-transparent border-none appearance-none focus:outline-none"
         type="text"
         aria-label="search"
         bind:value={queryL}
         on:keypress={handleKeypress} />
       <button
-        class="flex-shrink-0 px-4 py-1 text-sm font-light tracking-wide
-        text-white transition-all duration-300 transform translate-y-0
-        bg-transparent border-2 border-transparent rounded hover:bg-purple-900
-        hover:border-purple-900 hover:-translate-y-1"
+        class="flex-shrink-0 px-4 py-1 text-sm font-light tracking-wide text-white transition-all duration-300 transform translate-y-0 bg-transparent border-2 border-transparent rounded hover:bg-purple-900 hover:border-purple-900 hover:-translate-y-1"
         type="button"
         on:click={handleSearch}>
         search

@@ -3,7 +3,7 @@
 </script>
 
 {#if results}
-  <div class="w-1/3 px-3 my-3">
+  <div class="w-full px-3 my-3 md:w-1/3">
     <h3
       class="text-3xl font-thin tracking-wider text-center text-gray-600 uppercase">
       pixabay:
