@@ -5,7 +5,7 @@
 {#if results}
   <div class="w-1/3 px-3 my-3">
     <h3
-      class="text-3xl font-thin tracking-wider text-center text-gray-700 uppercase">
+      class="text-3xl font-thin tracking-wider text-center text-gray-600 uppercase">
       unsplash:
     </h3>
     {#each results as image, i}
