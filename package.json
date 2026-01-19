@@ -14,7 +14,7 @@
     "build:tailwind": "NODE_ENV=production postcss static/tailwind.css -o static/main.css"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.30.2",
     "compression": "^1.7.1",
     "concurrently": "^5.2.0",
     "dotenv": "^8.2.0",
